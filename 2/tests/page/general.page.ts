@@ -8,6 +8,7 @@ export class General {
     }
 
     async openSite(url=""): Promise<void> {
+        if (!url) throw new Error('URL is required for openSite()');
         await this.page.goto(url, { waitUntil: 'domcontentloaded' });
     }
 }
